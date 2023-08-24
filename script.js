@@ -1,4 +1,3 @@
-//your code here
 document.addEventListener("DOMContentLoaded", function () {
   const images = document.querySelectorAll("img");
   const verifyButton = document.getElementById("verify");
@@ -39,41 +38,4 @@ document.addEventListener("DOMContentLoaded", function () {
       if (selectedImages.length === 2) {
         verifyButton.style.display = "block";
         resetButton.style.display = "block";
-        state = 3;
-      }
-    }
-  }
-
-  // Helper function to handle verify button click
-  function handleVerifyClick() {
-    if (selectedImages.length === 2) {
-      if (selectedImages[0].classList.contains(selectedImages[1].classList[1])) {
-        para.innerText = "You are a human. Congratulations!";
-      } else {
-        para.innerText = "We can't verify you as a human. You selected the non-identical tiles.";
-      }
-      para.style.display = "block";
-      verifyButton.style.display = "none";
-      state = 4;
-    }
-  }
-
-  // Attach click event listeners to images
-  images.forEach((img) => {
-    img.addEventListener("click", handleImageClick);
-  });
-
-  // Attach click event listener to verify button
-  verifyButton.addEventListener("click", handleVerifyClick);
-
-  // Attach click event listener to reset button
-  resetButton.addEventListener("click", resetGame);
-
-  // Initial shuffle of images
-  shuffleArray(images);
-  const repeatIndex = Math.floor(Math.random() * 5);
-  images[5].classList = images[repeatIndex].classList;
-
-  // Initial state
-  resetGame();
-});
+       
